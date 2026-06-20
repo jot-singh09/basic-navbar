@@ -41,7 +41,7 @@ const Mobilena = () => {
         </div>
       </div>
       <div
-          className="bg-[#444] py-10 flex flex-col gap-5 px-4 underline text-white h-300 w-full animate-[slideIn_0.5s_ease-out_forwards]"
+          className="bg-[#444] py-10 hidden flex-col gap-5 px-4 underline text-white h-300 w-full animate-[slideIn_0.5s_ease-out_forwards]"
         ref={myElementRef}
       >
         <h4>Home</h4>
