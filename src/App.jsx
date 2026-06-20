@@ -12,8 +12,8 @@ const App = () => {
      <div className="lg:hidden">
       <Mobilena/>
      </div>
-    </div>
+     </div>
   )
-}
+};
 
 export default App

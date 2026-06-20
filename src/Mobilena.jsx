@@ -26,7 +26,9 @@ const Mobilena = () => {
     
   };
   return (
+    
     <div>
+      
       <div className="bg-[#222] text-white w-full h-10 flex justify-between items-center">
         <div className="px-10 max-lg:px-2  ">
           <h1 className="text-2xl font-bold max-lg:text-xl" onClick={hiideh1}>WebPractice</h1>
@@ -39,7 +41,7 @@ const Mobilena = () => {
         </div>
       </div>
       <div
-        className="bg-[#444] hidden  flex-col gap-5 px-4 underline text-white w-full"
+          className="bg-[#444] py-10 flex flex-col gap-5 px-4 underline text-white h-300 w-full animate-[slideIn_0.5s_ease-out_forwards]"
         ref={myElementRef}
       >
         <h4>Home</h4>
