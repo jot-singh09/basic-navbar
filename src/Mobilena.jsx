@@ -1,42 +1,53 @@
-import { useState } from 'react';
-import Logo from "./Logo"
+import { useRef, useState } from "react";
 const Mobilena = () => {
-    const [isActive, setIsActive] = useState(false);
-    const nav = document.querySelector('#navopn')
-    function opennav(){
-        console.log('clicked');
-            if (isActive==true){
-                setIsActive(false)
-                nav.style.display='none';
-                
-            }
-            else if (isActive==false){
-                nav.style.display='flex'
-                setIsActive(true)
-
-            }
+  const [isActive, setIsActive] = useState(false);
+  const [hide, setIsHide] = useState(false);
+  const myElementRef = useRef(null);
+  const hideh = useRef(null);
+  const opennav = () => {
+    console.log("clicked");
+    if (isActive == true) {
+      setIsActive(false);
+      myElementRef.current.style.display = "none";
+    } else if (isActive == false) {
+      myElementRef.current.style.display = "flex";
+      setIsActive(true);
     }
+    };
+
+    const hiideh1 = () => {
+      if (hide == true) {
+        setIsHide(false);
+        hideh.current.style.display = "none";
+      } else if (hide == false) {
+        hideh.current.style.display = "flex";
+        setIsHide(true);
+      }
+    
+  };
   return (
     <div>
+      <div className="bg-[#222] text-white w-full h-10 flex justify-between items-center">
+        <div className="px-10 max-lg:px-2  ">
+          <h1 className="text-2xl font-bold max-lg:text-xl" onClick={hiideh1}>WebPractice</h1>
+        </div>
 
-   
-    <div className="bg-[#222] text-white w-full h-10 flex justify-between items-center">
-        
-      <Logo/>
-      <div className="px-10">
-         <h1 className="px-10 text-sm">
-       <img className="w-10" onClick={opennav} src="https://imgs.search.brave.com/9oIDHljy0LUwsOi1I6VdJGegMCbw8Y2EDr5zLnxceEk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wbmcu/cG5ndHJlZS5jb20v/dGh1bWJfYmFjay9m/aDI2MC9iYWNrZ3Jv/dW5kLzIwMjIwODAx/L3BuZ3RyZWUtZ2xv/c3N5LWJ1dHRvbi1i/YXItZ2xvd2luZy1u/YXZpZ2F0aW9uLXBo/b3RvLWltYWdlXzg3/OTg5MDYuanBn" alt="icon" />
-      </h1>
-
+        <div className="px-10" ref={hideh}>
+          <h1 className="px-10 text-sm" onClick={opennav}>
+            AddIcon
+          </h1>
+        </div>
       </div>
-    </div>
-      <div id="navopn" className="bg-[#444] hidden flex flex-col gap-5 px-4 underline text-white w-full">
+      <div
+        className="bg-[#444] hidden  flex-col gap-5 px-4 underline text-white w-full"
+        ref={myElementRef}
+      >
         <h4>Home</h4>
         <h4>About</h4>
         <h4 className="pb-5">Contact</h4>
       </div>
-     </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Mobilena
+export default Mobilena;
