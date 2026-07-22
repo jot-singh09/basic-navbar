@@ -46,6 +46,7 @@ const Upper = () => {
 
       
       <div>
+       
         <div className='w-full'>
       <div className='absolute max-sm:left-1 left-10  max-md:left-3 max-md:top-14 top-22'>
         <div className='flex gap-2 items-center max-lg:hidden  px-10 text-gray-300'>
