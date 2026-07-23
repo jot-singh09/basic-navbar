@@ -8,12 +8,12 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: false, // Optional: set to true for debugging
-    minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom']
+        manualChunks(id) {  // ← THIS MUST BE A FUNCTION
+          if (id.includes('node_modules')) {
+            return 'vendor'
+          }
         }
       }
     }
